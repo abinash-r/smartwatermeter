@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Smart Water Meter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <style>
+      #root_1{
+          background-color: orangered;
+      }
+      #root_2{
+        background-color: burlywood;
+      }
+      * {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+#tb_1{
+    border: 3px;
+    padding: 5px;
+}
+
+  </style>
+</head>
+<body>
+    <div class='container-fluid' id='root_1'>
+        <div class='jumbotron' id='root_2'>
+            <h1 style=" color: black;  font-family: 'Times New Roman', Times, serif; text-align: center;">Automated Water level System</h1>
+            <h3 style="color:black; font-family: 'Times New Roman', Times, serif; text-align: center;">Using IoT</h3>
+        </div>
+    </div>
+    <div class='container-fluid' id='root_3'>
+        <div class='container' id='root_4'>
+            <h4 style='color: black;text-align: center;'>Login/Register to view the water Consumption at your home</h4>
+        </div>
+        <div class="jumbotron" id='root_5'>
+            <form  name='my_frm1' action="/action_page.php" >
+                <div class="container">
+                  <h1>Register</h1>
+                  <p>Please fill in this form to create an account.</p>
+                  <hr>
+              
+                  <label for="user_name"><b>User Name</b></label>
+                  <input type="text" placeholder="Enter your name" name="Username1" id="user_name" required>
+              
+                  <label for="psw"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" name="psw1" id="psw" required>
+              
+                  <label for="psw-repeat"><b>Repeat Password</b></label>
+                  <input type="password" placeholder="Repeat Password" name="psw-repeat1" id="psw-repeat" required>
+                  <hr>
+                 
+                  <button type="submit" id='reg_1' onclick="return validateall()" class="registerbtn">Register</button>
+                </div>
+                
+                <div class="container signin">
+                  <p>Already have an account? <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign in</button></p>
+                </div>
+              </form>
+        </div>
+        <div id="id01" class="modal">
+  
+            <form  name='my_frm2' class="modal-content animate" method="post">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+              </div>
+          
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname2" required>
+          
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw2" required>
+                  
+                <button type="submit" onclick='show_result()'>Login</button>
+                <div class='container' style="background-color: #f1f1f1;" id="cns_amnt">
+                    <h3 style="text-align: center; font-family: 'Times New Roman', Times, serif;">Login to Know</h3>
+                    <h1 style="font-family: 'Courier New', Courier, monospace; text-align: center;">Water Consumption amount for your Home</h1>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember2"> Remember me
+                </label>
+              </div>
+          
+              <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+              </div>
+            </form>
+          </div>
+          
+           
+        </div>
+          
+
+    </div>
+    <script>
+        function validateall()
+        {
+            var name=document.my_frm1.username1.value;
+            var password=document.my_frm1.psw1.value;
+            
+            if(name==null || name=="")
+            {
+                alert("name can't be empty");
+                return false;
+            }
+            if(password.length<6)
+            {
+                alert('password must be at least 6 character long');
+                return false;
+            }
+            var repeatpassword=document.psw-repeat1.value;
+            if(password==repeatpassword)
+            {
+                return true;
+            }
+            else
+            {
+                alert("password must be same")
+                return false;
+            }
+        }
+        function show_result()
+        {
+            data=[{Date:'01-08-2021',FlowGPM:'9.42',consumptionAmount:'224626'},
+            {Date:'01-08-2021',FlowGPM:'9.42',consumptionAmount:'224626'},
+            {Date:'01-08-2021',FlowGPM:'9.42',consumptionAmount:'224626'}]
+
+            head=`<table cellpading='10' border='3px'>
+                <tr>
+                    <th>Date</th>
+                    <th>FlowGPM</th>
+                    <th>ConsumptionAmount</th>
+                </tr>`
+            content=' '
+            for(i=0;i<data.length;i++)
+            {
+                content=content+ `<tr>
+                <td>${data[i].Date}</td>
+                <td>${data[i].FlowGPM}</td>
+                <td>${data[i].ConsumptionAmount}</td>
+                </tr>`
+            }
+            tail='</table>'
+            document.getElementById('cns_amnt').innerHTML=head+content+tail;
+            document.getElementById("cns_amnt").style.display="block";
+                    
+        }
+            
+      
+    </script>
+
+
+</body>
+</html>
